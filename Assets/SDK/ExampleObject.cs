@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace  SerializationExample
 {
-    [SerializeField]
+    [Serializable]
     public class ExampleObject
     {
         public string name { get; private set; }
