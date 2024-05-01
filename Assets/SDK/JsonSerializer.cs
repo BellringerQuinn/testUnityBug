@@ -9,7 +9,7 @@ namespace SerializationExample
         {
             ExampleObject obj = new ExampleObject("cool name", "stuff", "other stuff");
             string json = JsonUtility.ToJson(obj);
-            Debug.Log(json);
+            Debug.Log("Serialized by JsonUtility: " + json);
         }
 
         public static void SerializeWithNewtonsoft()
@@ -20,7 +20,7 @@ namespace SerializationExample
                 NullValueHandling = NullValueHandling.Ignore
             };
             string json = JsonConvert.SerializeObject(obj, serializerSettings);
-            Debug.Log(json);
+            Debug.Log("Serialized by Newtonsoft: " + json);
         }
     }
 }
