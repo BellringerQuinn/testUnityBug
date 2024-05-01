@@ -1,0 +1,17 @@
+{
+  "name": "com.BellringerQuinn.packagemanagererror",
+  "version": "1.0.0",
+  "displayName": "Package manager error",
+  "description": "A Unity SDK used to showcase a Unity bug",
+  "unity": "2022.3",
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json" : "3.2.1"
+  },
+  "author": {
+    "name": "Quinn Purdy",
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0xsequence/sequence-unity.git"
+  }
+}
