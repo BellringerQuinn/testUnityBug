@@ -30,7 +30,7 @@ namespace SerializationExample
             Debug.Log("Complex object Serialized by JsonUtility: " + json);
         }
 
-        public static void SerializeWithNewtonsoft()
+        public static void SerializeComplextObjectWithNewtonsoft()
         {
             ExampleObject obj = new ExampleObject("cool name", "stuff", "other stuff");
             ComplexObject complex = new ComplexObject("some string", obj, 5);
