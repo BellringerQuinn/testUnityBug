@@ -10,7 +10,7 @@ namespace  SerializationExample
     {
         public string name { get; private set; }
         public string someValue { get; private set; }
-        public string SomeOtherValue { get; private set; }
+        public string SomeOtherValue;
 
         public ExampleObject(string name, string someValue, string someOtherValue)
         {
