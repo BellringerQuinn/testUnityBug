@@ -25,15 +25,17 @@ namespace SerializationExample
         public static void SerializeComplexObjectWithJsonUtility()
         {
             ExampleObject obj = new ExampleObject("cool name", "stuff", "other stuff");
-            ComplexObject complex = new ComplexObject("some string", obj, 5);
+            NestedObject<ExampleObject> nested = new NestedObject<ExampleObject>("ExampleObject", obj);
+            ComplexObject complex = new ComplexObject("some string", nested, 5);
             string json = JsonUtility.ToJson(complex);
             Debug.Log("Complex object Serialized by JsonUtility: " + json);
         }
 
-        public static void SerializeComplextObjectWithNewtonsoft()
+        public static void SerializeComplexObjectWithNewtonsoft()
         {
             ExampleObject obj = new ExampleObject("cool name", "stuff", "other stuff");
-            ComplexObject complex = new ComplexObject("some string", obj, 5);
+            NestedObject<ExampleObject> nested = new NestedObject<ExampleObject>("ExampleObject", obj);
+            ComplexObject complex = new ComplexObject("some string", nested, 5);
             JsonSerializerSettings serializerSettings = new JsonSerializerSettings
             {
                 NullValueHandling = NullValueHandling.Ignore
