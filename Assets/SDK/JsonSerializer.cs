@@ -43,5 +43,17 @@ namespace SerializationExample
             string json = JsonConvert.SerializeObject(complex, serializerSettings);
             Debug.Log("Complex object Serialized by Newtonsoft: " + json);
         }
+
+        public static T DeserializeJsonWithJsonUtility<T>(string json)
+        {
+            T obj = JsonUtility.FromJson<T>(json);
+            return obj;
+        }
+
+        public static T DeserializeJsonWithNewtonsoft<T>(string json)
+        {
+            T obj = JsonConvert.DeserializeObject<T>(json);
+            return obj;
+        }
     }
 }
