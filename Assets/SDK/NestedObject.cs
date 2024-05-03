@@ -13,5 +13,10 @@ namespace SerializationExample
             ObjectType = objectType;
             ObjectThatIsNested = objectThatIsNested;
         }
+
+        public override string ToString()
+        {
+            return $"[NestedObject: ObjectType: {ObjectType} ObjectThatIsNested: {ObjectThatIsNested}]";
+        }
     }
 }

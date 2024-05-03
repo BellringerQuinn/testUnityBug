@@ -15,5 +15,10 @@ namespace SerializationExample
             this.SomeObject = someObject;
             this.SomeNumber = someNumber;
         }
+
+        public override string ToString()
+        {
+            return $"[ComplexObject: SomeValue: {SomeValue} SomeObject: {SomeObject} SomeNumber: {SomeNumber}]";
+        }
     }
 }

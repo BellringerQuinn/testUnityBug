@@ -18,5 +18,10 @@ namespace  SerializationExample
             this.someValue = someValue;
             SomeOtherValue = someOtherValue;
         }
+
+        public override string ToString()
+        {
+            return $"[ExampleObject: name: {name} someValue: {someValue} SomeOtherValue: {SomeOtherValue}]";
+        }
     }
 }
