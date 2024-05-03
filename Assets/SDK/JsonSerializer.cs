@@ -5,14 +5,15 @@ namespace SerializationExample
 {
     public class JsonSerializer
     {
-        public static void SerializeWithJsonUtility()
+        public static string SerializeWithJsonUtility()
         {
             ExampleObject obj = new ExampleObject("cool name", "stuff", "other stuff");
             string json = JsonUtility.ToJson(obj);
             Debug.Log("Serialized by JsonUtility: " + json);
+            return json;
         }
 
-        public static void SerializeWithNewtonsoft()
+        public static string SerializeWithNewtonsoft()
         {
             ExampleObject obj = new ExampleObject("cool name", "stuff", "other stuff");
             JsonSerializerSettings serializerSettings = new JsonSerializerSettings
@@ -21,17 +22,19 @@ namespace SerializationExample
             };
             string json = JsonConvert.SerializeObject(obj, serializerSettings);
             Debug.Log("Serialized by Newtonsoft: " + json);
+            return json;
         }
-        public static void SerializeComplexObjectWithJsonUtility()
+        public static string SerializeComplexObjectWithJsonUtility()
         {
             ExampleObject obj = new ExampleObject("cool name", "stuff", "other stuff");
             NestedObject<ExampleObject> nested = new NestedObject<ExampleObject>("ExampleObject", obj);
             ComplexObject complex = new ComplexObject("some string", nested, 5);
             string json = JsonUtility.ToJson(complex);
             Debug.Log("Complex object Serialized by JsonUtility: " + json);
+            return json;
         }
 
-        public static void SerializeComplexObjectWithNewtonsoft()
+        public static string SerializeComplexObjectWithNewtonsoft()
         {
             ExampleObject obj = new ExampleObject("cool name", "stuff", "other stuff");
             NestedObject<ExampleObject> nested = new NestedObject<ExampleObject>("ExampleObject", obj);
@@ -42,6 +45,7 @@ namespace SerializationExample
             };
             string json = JsonConvert.SerializeObject(complex, serializerSettings);
             Debug.Log("Complex object Serialized by Newtonsoft: " + json);
+            return json;
         }
 
         public static T DeserializeJsonWithJsonUtility<T>(string json)
